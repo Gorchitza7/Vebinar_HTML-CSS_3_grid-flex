@@ -1,0 +1,32 @@
+/* body {
+	background-color: aqua;
+} */
+
+.cards {
+	display: grid;
+	gap: 1rem;
+	/* изменяем рамки карточки */
+	grid-template-columns: repeat(auto-fit, minmax(33%, auto));
+	/* justify-items: center; */
+}
+
+/* границы и тени карточки */
+.card {
+	display: grid;
+	/* зазор */
+	gap: 1rem;
+	grid-auto-rows: 1fr auto;
+	justify-content: space-between;
+}
+
+.card-heading {
+	display: grid;
+	justify-items: center;
+	/* зазор - текст от ценника */
+	gap: .5rem;
+}
+.card-body{
+	display: grid;
+	justify-items: center;
+
+}

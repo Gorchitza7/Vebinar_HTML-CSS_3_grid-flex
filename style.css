@@ -1,0 +1,31 @@
+/* Общие свойства */
+
+/* границы и тени карточки */
+.card {
+	border: 0.1rem solid #ccc;
+	border-radius: 1rem;
+	box-shadow: 0 0.1rem 0.2rem #0003;
+	padding: 1rem;
+	text-align: center;
+}
+
+.rating > * {
+	border: 0.1rem solid #ccc;
+	border-radius: 0.5rem;
+	box-shadow: 0 0.1rem 0.2rem #0003;
+	padding: 0.25rem 1rem;
+}
+
+.rate {
+	background-color: pink;
+}
+
+.count {
+	background-color: aquamarine;
+}
+
+/* размеры карточки */
+.card-body img {
+	max-width: 15rem;
+	height: auto;
+} 

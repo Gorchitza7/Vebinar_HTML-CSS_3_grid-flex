@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<!-- <link rel="stylesheet" href="style-grid.css" /> -->
+		<link rel="stylesheet" href="style-flex.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<h1>Fake Store Example</h1>
+		<h2>Products</h2>
+
+		<div class="cards">
+			<!-- card -->
+			<div class="card">
+				<div class="card-heading">
+					<h3 class="title">
+						<a href="product.html?id=1"
+							>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</a
+						>
+					</h3>
+					<span class="category">men's clothing</span>
+					<div class="rating">
+						<i class="rate">3.9</i>
+						<b class="count">120</b>
+					</div>
+				</div>
+				<div class="card-body">
+					<img
+						src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+						alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+					/>
+					<p class="price">109.95</p>
+					<p class="description">
+						Slim-fitting style, contrast raglan long sleeve, three-button henley
+						placket, light weight &amp; soft fabric for breathable and comfortable
+						wearing. And Solid stitched shirts with round neck made for
+						durability and a great fit for casual fashion wear and diehard
+						baseball fans. The Henley style round neckline includes a
+						three-button placket.
+					</p>
+				</div>
+			</div>
+
+			<!-- card -->
+			<div class="card">
+				<div class="card-heading">
+					<h3 class="title">
+						<a href="product.html?id=1"></a>
+					</h3>
+					<span class="category"></span>
+					<div class="rating">
+						<i class="rate"></i>
+						<b class="count"></b>
+					</div>
+				</div>
+				<div class="card-body">
+					<img src="#" alt="" />
+					<p class="price"></p>
+					<p class="description"></p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Скрипт -->
+		<script>
+			const cards = document.querySelector('.cards')
+
+			const url = 'data.json'
+			fetch(url)
+				.then(res => res.json())
+				.then(data => {
+					console.log(data)
+
+					data.forEach(product => {
+						const card = document.createElement('div')
+						card.classList.add('card')
+						card.innerHTML = `
+				<div class="card-heading">
+					<h3 class="title">
+						<a href="product.html?id=${product.id}">${product.title}</a>
+					</h3>
+					<span class="category">${product.category}
+						</span>
+					<div class="rating">
+						<i class="rate">${product.rating.rate}</i>
+						<b class="count">${product.rating.count}</b>
+					</div>
+				</div>
+				<div class="card-body">
+					<img
+						src="${product.image}"
+						alt="${product.title}"
+					/>
+					<p class="price">${product.price}</p>
+					<p class="description">${product.description}</p>
+			</div>					
+						`
+						cards.appendChild(card)
+					})
+				})
+		</script>
+	</body>
+</html>
